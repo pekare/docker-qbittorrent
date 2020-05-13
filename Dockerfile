@@ -1,7 +1,8 @@
-FROM ubuntu:latest
+FROM alpine:edge
 
-RUN apt-get update && \
-    apt-get install -y supervisor openvpn qbittorrent-nox && \
+RUN apk add --no-cache --update && \
+    supervisor openvpn qbittorrent-nox && \
+    rm  -rf /tmp/* /var/cache/apk/* && \
     mkdir -p /var/log/supervisor && \
     groupadd -g 911 qbittorrent && \
     useradd -u 911 -g 911 qbittorrent
