@@ -1,6 +1,4 @@
-FROM debian:testing
-
-VOLUME /config
+FROM ubuntu:testing
 
 RUN apt-get update && \
     apt-get install -y supervisor openvpn qbittorrent-nox && \
