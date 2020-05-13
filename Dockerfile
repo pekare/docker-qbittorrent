@@ -1,4 +1,4 @@
-FROM debian:unstable
+FROM debian:testing
 
 VOLUME /config
 
@@ -13,6 +13,8 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
+
+VOLUME ["/config", "/downloads"]
 
 ENTRYPOINT ["/entrypoint.sh"]
 
