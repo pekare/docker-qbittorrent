@@ -14,4 +14,4 @@ usermod -o -u "${PUID}" qbittorrent
 chown -R qbittorrent:qbittorrent /config
 
 echo "######## Starting services with supervisord"
-exec /usr/bin/supervisord
+exec /usr/bin/supervisord -c /etc/supervisord.conf
